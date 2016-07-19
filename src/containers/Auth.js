@@ -1,6 +1,8 @@
 import Auth from '../components/auth/Auth.react';
 import { connect } from 'react-redux';
 
-export default connect(state => ({
+const mapStateToProps = state => ({
   displayName: state.getIn(['user', 'displayName'])
-}))(Auth);
+})
+
+export default connect(mapStateToProps)(Auth);

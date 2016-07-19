@@ -16,8 +16,7 @@ class Auth extends React.Component {
 }
 
 Auth.propTypes = {
-  userName: PropTypes.string,
-  changeName: PropTypes.func
+  displayName: PropTypes.string,
 };
 
 export default Auth;

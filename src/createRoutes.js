@@ -1,6 +1,6 @@
 import React from 'react';
 import RootApp from './components/RootApp.react';
-import Auth from './components/auth/Auth.react';
+import Auth from './containers/Auth';
 import Chat from './components/chat/Chat.react';
 import NoMatch from './components/nomatch/NoMatch.react';
 import { Route, IndexRoute } from 'react-router';

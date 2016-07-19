@@ -1,6 +1,5 @@
 import './RootApp.scss';
 import React from 'react';
-import Auth from '../containers/Auth';
 import 'materialize-css/bin/materialize.js';
 
 class App extends React.Component {
