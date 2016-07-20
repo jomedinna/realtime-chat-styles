@@ -9,8 +9,10 @@ export default function createRoutes(store) {
 
   const requireSignIn = (nextState, replace) => {
     let state = store.getState();
-    // TODO: Validate if the user is authenticated checking a value in the redux state
-    // if the user is not authenticated redirect to '/signin' with the replace function
+
+    if (state.getIn(['user', 'isAuthenticated'])) return;
+
+    replace('/signin');
   }
 
   return (

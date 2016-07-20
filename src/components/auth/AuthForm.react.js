@@ -19,7 +19,11 @@ class AuthForm extends React.Component {
           </div>
         </div>
         <div className="row">
-          <button className="btn waves-effect waves-light" type="button">
+          <button
+            className="btn waves-effect waves-light"
+            type="button"
+            onClick={this.props.signIn}
+          >
             Sign In
             <i className="material-icons right">send</i>
           </button>

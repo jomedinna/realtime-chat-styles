@@ -2,6 +2,7 @@ import { fromJS } from 'immutable';
 
 export default fromJS({
   user: {
-    displayName: 'Guest'
+    displayName: 'Guest',
+    isAuthenticated: false
   }
 })

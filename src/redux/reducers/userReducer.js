@@ -1,3 +1,8 @@
 export default (state = {}, action) => {
-  return state;
+  switch (action.type) {
+    case 'SIGNIN_SUCCESS':
+      return state.update('isAuthenticated', () => true)
+    default:
+      return state;
+  }
 }
