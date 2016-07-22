@@ -1,5 +1,5 @@
 import './RootApp.scss';
-import React from 'react';
+import React, { PropTypes } from 'react';
 import 'materialize-css/bin/materialize.js';
 
 class App extends React.Component {
@@ -11,5 +11,9 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default App;

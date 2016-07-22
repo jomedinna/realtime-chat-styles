@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import AuthForm from './AuthForm.react';
-import { connect } from 'react-redux';
 
 class Auth extends React.Component {
 

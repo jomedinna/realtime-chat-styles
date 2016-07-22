@@ -3,20 +3,21 @@ import { Iterable } from 'immutable';
 import reducers from './reducers';
 import initialState from './initialState';
 import createLogger from 'redux-logger';
+import thunk from 'redux-thunk';
 
 const stateTransformer = (state) => {
   if (Iterable.isIterable(state)) return state.toJS();
-  else return state;
+  return state;
 };
 
 const logger = createLogger({
   stateTransformer,
 });
 
-let store = createStore(
+const store = createStore(
   reducers,
   initialState,
-  applyMiddleware(logger)
-)
+  applyMiddleware(thunk, logger)
+);
 
 export default store;
