@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import ChatMessage from './ChatMessage.react';
+import ChatHeader from './ChatHeader.react';
 
 class Chat extends React.Component {
   constructor() {
@@ -19,11 +20,11 @@ class Chat extends React.Component {
   }
 
   render() {
-    const { messages } = this.props;
+    const { messages, displayName, signOut } = this.props;
     const createMessage = (message, index) => <ChatMessage key={index} message={message} />;
     return (
       <div>
-        <h4>Chat</h4>
+        <ChatHeader displayName={displayName} signOut={signOut} />
         <ul>
           {messages.map(createMessage)}
         </ul>
@@ -43,6 +44,7 @@ class Chat extends React.Component {
 Chat.propTypes = {
   fetchMessages: PropTypes.func.isRequired,
   createMessage: PropTypes.func.isRequired,
+  signOut: PropTypes.func.isRequired,
   displayName: PropTypes.string.isRequired,
 };
 

@@ -11,13 +11,13 @@ export default function createRoutes(store) {
 
     if (state.getIn(['user', 'isAuthenticated'])) return;
 
-    replace('/signin');
+    replace('/auth');
   };
 
   return (
     <Route path="/" component={RootApp}>
       <IndexRoute component={Chat} onEnter={requireSignIn} />
-      <Route path="signin" component={Auth} />
+      <Route path="auth" component={Auth} />
       <Route path="*" component={NoMatch} />
     </Route>
   );

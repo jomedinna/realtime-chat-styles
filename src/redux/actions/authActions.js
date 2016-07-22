@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router';
 
 const { auth } = firebase;
 
-function signIn(email, password) {
+export function signIn(email, password) {
   return (dispatch) => {
     auth().signInWithEmailAndPassword(email, password)
     .then(authData => {
@@ -17,8 +17,29 @@ function signIn(email, password) {
       console.log(error);
     });
   };
-}
+};
 
-export default {
-  signIn,
+export function signUp(email, password) {
+  return (dispatch) => {
+    auth().createUserWithEmailAndPassword(email, password)
+    .then(userData => {
+      dispatch({
+        type: 'SIGNUP_SUCCESS',
+        email: userData.email,
+      });
+      browserHistory.replace('/');
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  };
+};
+
+export function signOut() {
+  return (dispatch) => auth().signOut().then(() => {
+    dispatch({
+      type: 'SIGNOUT_SUCCESS'
+    })
+    browserHistory.replace('/auth')
+  });
 };

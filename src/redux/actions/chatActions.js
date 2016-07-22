@@ -2,7 +2,7 @@ import firebase from '../../firebase';
 
 const messages = firebase.database().ref('/messages');
 
-function fetchMessages() {
+export function fetchMessages() {
   return dispatch => {
     messages.on('value', (snapshot) => {
       dispatch({
@@ -11,9 +11,9 @@ function fetchMessages() {
       });
     });
   };
-}
+};
 
-function createMessage(text, messageFrom) {
+export function createMessage(text, messageFrom) {
   const message = {
     text,
     from: messageFrom,
@@ -21,9 +21,4 @@ function createMessage(text, messageFrom) {
   };
 
   return () => messages.push(message);
-}
-
-export default {
-  createMessage,
-  fetchMessages,
 };

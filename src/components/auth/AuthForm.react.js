@@ -5,12 +5,19 @@ class AuthForm extends React.Component {
   constructor() {
     super();
     this.signInViaEmail = this.signInViaEmail.bind(this);
+    this.signUpViaEmail = this.signUpViaEmail.bind(this);
   }
 
   signInViaEmail() {
     const email = this.refs.email.value;
     const password = this.refs.password.value;
     this.props.signIn(email, password);
+  }
+
+  signUpViaEmail() {
+    const email = this.refs.email.value;
+    const password = this.refs.password.value;
+    this.props.signUp(email, password);
   }
 
   render() {
@@ -39,6 +46,15 @@ class AuthForm extends React.Component {
             Sign In
             <i className="material-icons right">send</i>
           </button>
+          {' '}
+          <button
+            className="btn waves-effect waves-light"
+            type="button"
+            onClick={this.signUpViaEmail}
+          >
+            Sign up
+            <i className="material-icons right">add_circle</i>
+          </button>
         </div>
       </form>
     );
@@ -47,6 +63,7 @@ class AuthForm extends React.Component {
 
 AuthForm.propTypes = {
   signIn: PropTypes.func.isRequired,
+  signUp: PropTypes.func.isRequired,
 };
 
 export default AuthForm;
