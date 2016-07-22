@@ -17,7 +17,7 @@ $ npm install
 ## Customize
 - Set firebase configuration in `src/firebase/config.js`
 
-# Start
+## Start
 ```sh
 $ npm run start
 ```
