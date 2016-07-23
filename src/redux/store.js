@@ -5,19 +5,26 @@ import initialState from './initialState';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-const stateTransformer = (state) => {
-  if (Iterable.isIterable(state)) return state.toJS();
-  return state;
-};
+const middlewares = [thunk];
 
-const logger = createLogger({
-  stateTransformer,
-});
+if (process.env.NODE_ENV === 'development') {
+  const createLogger = require('redux-logger');
+
+  const stateTransformer = (state) => {
+    if (Iterable.isIterable(state)) return state.toJS();
+    return state;
+  };
+
+  const logger = createLogger({
+    stateTransformer,
+  });
+  middlewares.push(logger);
+}
 
 const store = createStore(
   reducers,
   initialState,
-  applyMiddleware(thunk, logger)
+  applyMiddleware(...middlewares)
 );
 
 export default store;

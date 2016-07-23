@@ -1,12 +1,10 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
 
 const ABSOLUTE_BASE = path.join(__dirname, '..');
 
 module.exports = {
-  devtool: 'source-map',
   entry: [
-    'webpack-hot-middleware/client',
     './src/main'
   ],
   output: {
@@ -15,12 +13,19 @@ module.exports = {
     publicPath: '/dist/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('development')
+        'NODE_ENV': JSON.stringify('production')
       },
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      }
     }),
   ],
   module: {
@@ -31,7 +36,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test:   /\.scss$/,
+        test: /\.scss$/,
         loader: 'style!css!sass',
       },
       {
