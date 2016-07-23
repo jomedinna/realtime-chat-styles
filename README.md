@@ -21,3 +21,9 @@ $ npm install
 ```sh
 $ npm run start
 ```
+
+## Build and serve production bundle
+```sh
+$ npm run build:prod
+$ npm run serve:prod
+```
