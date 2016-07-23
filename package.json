@@ -4,7 +4,7 @@
   "description": "Chat based on React for HackerSchool",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hackerschoolmty/frontend-week6.git"
+    "url": "https://github.com/hackerschoolmty/frontend-week7.git"
   },
   "scripts": {
     "clean:prod": "rimraf public/dist",
@@ -17,6 +17,7 @@
   "author": "Javier Ponce",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.14.0",
     "firebase": "^3.2.0",
     "immutable": "^3.8.1",
     "materialize-css": "^0.97.6",
@@ -42,7 +43,6 @@
     "eslint-plugin-import": "^1.10.2",
     "eslint-plugin-jsx-a11y": "^1.5.5",
     "eslint-plugin-react": "^5.2.2",
-    "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "node-sass": "^3.8.0",
