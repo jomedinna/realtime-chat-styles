@@ -4,7 +4,7 @@
   "description": "Chat based on React for HackerSchool",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hackerschoolmty/frontend-week6.git"
+    "url": "https://github.com/hackerschoolmty/frontend-week7.git"
   },
   "scripts": {
     "clean:prod": "rimraf public/dist",
