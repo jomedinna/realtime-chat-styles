@@ -6,12 +6,9 @@ import { authActions } from '../redux/actions';
 const allActions = Object.assign({}, chatActions, authActions)
 
 const mapStateToProps = state => {
-  const messages = state.getIn(['chat', 'messages']).valueSeq();
-
-  if (messages) {
-    messages.sort((a, b) => a.get('timestamp') > b.get('timestamp'));
-  }
-
+  const messages = state.getIn(['chat', 'messages'])
+                        .valueSeq()
+                        .sortBy(message => message.get('timestamp'));
   return {
     displayName: state.getIn(['user', 'displayName']),
     messages,
