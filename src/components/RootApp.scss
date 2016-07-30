@@ -1,1 +1,294 @@
 @import "~materialize-css/bin/materialize.css";
+
+
+$blanco: #fff;
+$verde-claro: #8BC34A;
+$verde-oscuro: #689f38;
+
+
+body {
+	background-color: #e2efd3;
+    height: 100vh;
+    text-align: center;
+}
+
+#app {
+	width: 90%;
+    background-color: $blanco;
+    box-shadow: 10px 10px 21px -11px rgba(0,0,0,0.36);
+    display: inline-block;
+    float: none !important;
+    margin: auto;
+}
+
+.background-div {
+	width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 45vh;
+    background-color: $verde-oscuro;
+    z-index: -1;
+}
+
+input:not([type]):focus:not([readonly]), 
+input[type=text]:focus:not([readonly]), 
+input[type=password]:focus:not([readonly]), 
+input[type=email]:focus:not([readonly]), 
+input[type=url]:focus:not([readonly]), 
+input[type=time]:focus:not([readonly]), 
+input[type=date]:focus:not([readonly]), 
+input[type=datetime]:focus:not([readonly]), 
+input[type=datetime-local]:focus:not([readonly]), 
+input[type=tel]:focus:not([readonly]), 
+input[type=number]:focus:not([readonly]), 
+input[type=search]:focus:not([readonly]), 
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid $verde-claro;
+    box-shadow: 0 1px 0 0 $verde-claro;
+}
+
+input:not([type]):focus:not([readonly]) + label, 
+input[type=text]:focus:not([readonly]) + label, 
+input[type=password]:focus:not([readonly]) + label, 
+input[type=email]:focus:not([readonly]) + label, 
+input[type=url]:focus:not([readonly]) + label, 
+input[type=time]:focus:not([readonly]) + label, 
+input[type=date]:focus:not([readonly]) + label, 
+input[type=datetime]:focus:not([readonly]) + label, 
+input[type=datetime-local]:focus:not([readonly]) + label, 
+input[type=tel]:focus:not([readonly]) + label, 
+input[type=number]:focus:not([readonly]) + label, 
+input[type=search]:focus:not([readonly]) + label, 
+textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: $verde-oscuro;
+}
+
+.md-space {
+	height: 30px;
+	width: 100%;
+}
+
+
+/*
+
+    __                _
+   / /   ____  ____ _(_)___
+  / /   / __ \/ __ `/ / __ \
+ / /___/ /_/ / /_/ / / / / /
+/_____/\____/\__, /_/_/ /_/
+            /____/
+
+*/
+
+.container {
+	width: 100%;
+    padding: 0px;
+    margin: 0px;
+	padding-bottom: 15px;
+    .row {
+    	margin: 0px;
+
+    	h5 {
+			width: 100%;
+		    padding: 30px 15px;
+		    background-color: $verde-claro;
+		    margin: 0px;
+		    margin-bottom: 35px;
+		    color: #fff;
+		    font-size: 2.7em;
+		}
+
+		.buttons {
+			margin-top: 15px;
+
+			button {
+				width: 200px;
+				text-align: center !important;
+				margin: 4px 3px;
+				border-radius: 0px;
+			}
+
+		}
+
+		.row {
+			padding: 0px 15px;
+			margin: 15px 0px;
+		}
+
+		.input-field  {
+			.prefix {
+				color: #212121;
+			}
+			input {
+				color: #212121;
+				padding: 5px;
+			}
+		}
+
+    }
+}
+
+/*
+
+   ________          __
+  / ____/ /_  ____ _/ /_
+ / /   / __ \/ __ `/ __/
+/ /___/ / / / /_/ / /_
+\____/_/ /_/\__,_/\__/
+
+
+*/
+
+
+.chat-container {
+	text-align: center;
+	input {
+		width: 85%;
+		margin-right: 2%;
+		float: none;
+		display: inline-block;
+	}
+
+	button {
+		width: 70%;
+		float: none;
+		display: inline-block;
+	}
+
+	ul {
+		max-height: 45vh;
+		min-height: 45vh;
+		height: 45vh;
+		overflow: auto;
+		margin-bottom: 45px;
+		text-align: left;
+
+		li {
+			text-align: left;
+			padding: 5px 25px;
+			color: #212121;
+		}
+	}
+
+	ul::-webkit-scrollbar-track
+	{
+	    background-color: #eaeaea;
+	}
+
+	ul::-webkit-scrollbar
+	{
+	    width: 10px;
+	    background-color: #eaeaea;
+	}
+
+	ul::-webkit-scrollbar-thumb
+	{
+	    background-color: $verde-claro;
+	}
+
+	.send-message {
+		background-color: $verde-oscuro;
+	}
+
+	div {
+		p {
+			text-align: left;
+			padding: 20px 15px;
+			background-color: #8bc34a;
+			margin: 0;
+			color: #fff;
+			height: 160px;
+			strong {
+				text-align: left;
+				color: #edf1c6;
+			}
+
+			a {
+				float: right;
+				color: #fff;
+				width: 54px;
+				text-align: center;
+			}
+		}
+
+		h4 {
+			position: relative;
+		    margin-top: -35px;
+		    font-size: 2.5em;
+		    color: #fff;
+		    border-top: 0px solid #edf1ae;
+		    width: 90%;
+		    position: relative;
+		    margin: 0px auto;
+		    margin-top: -73px;
+		    margin-bottom: 0px;
+		    padding: 10px 0px;
+		}
+	}
+}
+
+
+/*
+
+    ____             _
+   / __ )____ ______(_)____
+  / __  / __ `/ ___/ / ___/
+ / /_/ / /_/ (__  ) / /__
+/_____/\__,_/____/_/\___/
+    ____                                   _
+   / __ \___  _________  ____  ____  _____(_)   _____
+  / /_/ / _ \/ ___/ __ \/ __ \/ __ \/ ___/ / | / / _ \
+ / _, _/  __(__  ) /_/ / /_/ / / / (__  ) /| |/ /  __/
+/_/ |_|\___/____/ .___/\____/_/ /_/____/_/ |___/\___/
+               /_/
+
+*/
+
+@media screen and (max-width: 640px){
+	.chat-container {
+		input {
+			width: 70%;
+			margin-right: 2%;
+		}
+	}
+}
+
+@media screen and (max-width: 560px){
+	.chat-container {
+		input {
+			width: 80%;
+			margin-right: 2%;
+		}
+	}
+}
+
+@media screen and (max-width: 425px){
+
+	.container {
+		.row {
+			h5 {
+    			font-size: 2em;
+    		}
+    	}
+    }
+
+	.chat-container {
+		div {
+			h4 {
+				margin-top: -55px;
+			    margin-bottom: 0px;
+			    padding: 7px 0px;
+			    font-size: 2em;
+			}
+
+			p {
+				padding-top: 10px;
+			}
+
+			a {
+				margin-top: 8px;
+			}
+		}
+	}
+}
